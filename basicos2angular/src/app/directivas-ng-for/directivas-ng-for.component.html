@@ -1,0 +1,27 @@
+<section>
+    <h1>Ejemplo de directiva ngFor</h1>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Nº</th>
+                    <th>Nombre</th>
+                    <th>Localidad</th>
+                    <th>CIF</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr *ngFor="let proveedor of proveedores; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{proveedor.nombre}}</td>
+                    <td>{{proveedor.localidad}}</td>
+                    <td>{{proveedor.cif}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

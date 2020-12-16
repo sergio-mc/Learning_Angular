@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "basicos2angular": {
+    "erpcompras": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/basicos2angular",
+            "outputPath": "dist/erpcompras",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "basicos2angular:build"
+            "browserTarget": "erpcompras:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "basicos2angular:build:production"
+              "browserTarget": "erpcompras:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "basicos2angular:build"
+            "browserTarget": "erpcompras:build"
           }
         },
         "test": {
@@ -113,19 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "basicos2angular:serve"
+            "devServerTarget": "erpcompras:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "basicos2angular:serve:production"
+              "devServerTarget": "erpcompras:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "basicos2angular",
-  "cli": {
-    "analytics": "01534044-0567-4d1d-8c4d-82bfc0e52a65"
-  }
+  "defaultProject": "erpcompras"
 }

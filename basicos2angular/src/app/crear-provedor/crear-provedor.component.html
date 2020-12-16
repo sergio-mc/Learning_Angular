@@ -1,0 +1,6 @@
+<h1>Ejemplo de componente emisor datos</h1>
+<h3>Añade tu proveedor</h3>
+<input type="text" placeholder="Nombre" [(ngModel)]="proveedor.nombre">
+<input type="text" placeholder="Localidad" [(ngModel)]="proveedor.localidad">
+<input type="text" placeholder="CIF" [(ngModel)]="proveedor.cif">
+<button (click)="addProveedor()">Añadir</button>
