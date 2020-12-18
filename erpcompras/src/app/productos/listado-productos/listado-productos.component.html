@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="card">
+        <div class="fila">
+            <div class="col-100 titulo">
+                <form class="buscador" [formGroup]="formSearch">
+                    <label><img src="assets/search.svg" (click)="showForm()" alt=""></label>
+                    <input  #search type="search" placeholder="Nombre producto" formControlName="search">
+                </form>
+                <button routerLink="/crear-producto">Añadir Producto</button>
+            </div>
+        </div>
+        <hr>
+        <app-spinner *ngIf="consultando"></app-spinner>
+        <table *ngIf="!consultando" class="clientes">
+            <tr>
+                <th>Cod. sku</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Proveedor</th>
+            </tr>
+            <tr *ngFor="let producto of productos">
+                <td>{{producto?.sku}}</td>
+                <td>{{producto?.name}}</td>
+                <td>{{producto?.description}}</td>
+                <td>{{producto?.price}}</td>
+                <td>{{producto?.provider}}</td>
+                <td>
+                    <button class="warning" routerLink="/editar-producto/{{producto._id}}">
+                        <img src="assets/edit.svg" alt="">
+                        Modificar
+                    </button>
+                </td>
+                <td>
+                    <button class="danger" (click)="toggleModal(producto._id)">
+                        <img src="assets/trash.svg" alt="">
+                        Borrar
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<app-modal *ngIf="showModal" [texto]="'¿Estás seguro de eliminar este producto?'" (accion)='getAccion($event)'></app-modal>

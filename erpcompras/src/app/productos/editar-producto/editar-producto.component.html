@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="card w-60">
+        <div class="fila">
+            <div class="col-100 titulo">
+                <h1>Editar producto</h1>
+            </div>
+        </div>
+        <form [formGroup]="formProducto" (ngSubmit)="sendProducto()">
+            <div class="fila">
+                <div class="col-100 pila">
+                    <label for="nombre">
+                        NOMBRE
+                        <span class="validate valid" *ngIf="validacion && formProducto.controls.name.valid">
+                            <img src="assets/check-circle.svg" alt="">
+                        </span>
+                        <span class="validate invalid" *ngIf="validacion && formProducto.controls.name.invalid">
+                            <img src="assets/alert-triangle.svg" alt="">
+                            El nombre es obligatorio
+                        </span>
+                    </label>
+                    <input [ngClass]="{'invalid': validacion && formProducto.controls.name.invalid}" type="text" id="nombre" formControlName="name">
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col-100 pila">
+                    <label for="nombre">CODIGO SKU</label>
+                    <input type="text" id="sku" formControlName="sku" readonly>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col-100 pila">
+                    <label for="nombre">DESCRIPCION</label>
+                    <input type="text" id="description" formControlName="description">
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col-100 pila">
+                    <label for="nombre">PRECIO</label>
+                    <input type="number" id="price" formControlName="price">
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col-100 pila">
+                    <label for="nombre">PROVEEDOR</label>
+                    <input type="text" id="provider" formControlName="provider">
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col-100 botones">
+                    <button type="button" routerLink="/listado-productos" class="outline">Cancelar</button>
+                    <button type="button" *ngIf="formProducto.invalid" class="m-l-small" (click)="mostrarValidacion()">Añadir</button>
+                    <button type="submit" *ngIf="formProducto.valid" class="m-l-small">Añadir</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

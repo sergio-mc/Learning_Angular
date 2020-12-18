@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/main.scss"
             ],
             "scripts": []
           },
@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "erpcompras"
+  "defaultProject": "erpcompras",
+  "cli": {
+    "analytics": "773cd363-4a20-4731-a78c-a9b5a2e8104e"
+  }
 }
